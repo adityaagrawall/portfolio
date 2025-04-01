@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li> <!-- Added Home Button -->
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>    
+    <header>
+    <h1>Welcome to ADITYA's Portfolio</h1>
+    <p>Hi, I'm Aditya Agrawal! I'm a beginner web developer. A passionate web developer and tech enthusiast.</p>
+    </header>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am passionate about web development and currently learning HTML, CSS, and JavaScript.</p>
+        <p>Hey there! I'm <strong>Aditya Agrawal</strong>, a passionate web developer and tech enthusiast on a mission to build impactful digital experiences. 
+            My journey into the world of programming started with C and C++, and over time, I expanded my skills to Python and Java. 
+            Now, I’m diving deep into frontend development with HTML, CSS, JavaScript, and React.js to craft interactive and user-friendly web applications.</p>
+        
+            <p>My interest in technology goes beyond just coding—I love solving real-world problems through innovative solutions. 
+            Whether it's creating AI-driven applications, automating tasks, or designing intuitive user interfaces, I always strive to learn and improve. 
+            I believe in continuous learning, and I’m currently exploring modern web technologies, frameworks, and best practices to sharpen my expertise.</p>
+        
+            <p>In addition to web development, I have a keen interest in AI-driven content creation. 
+            I'm currently experimenting with AI-powered tools to generate engaging short-form videos for platforms like Reels, Shorts, and TikTok. 
+            My goal is to automate and optimize content creation using AI, making the process efficient and creative.</p>
+        
+            <p>Right now, I am actively working on personal projects and building my portfolio while looking for opportunities to gain real-world experience. 
+            I’m eager to collaborate with like-minded developers, contribute to open-source projects, and take on exciting challenges in the tech industry.</p>
+        
+            <p>When I’m not coding, you’ll find me exploring new tech trends, watching educational content on startups and innovations, or brainstorming fresh ideas for my next project.</p>
+
+            <img src="images/profile.jpg" alt="Aditya Agrawal" class="profile-pic">
+            
+            <p>Hey there! I'm <strong>Aditya Agrawal</strong>, a passionate web developer and tech enthusiast...</p>
+        
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        
+        <h3>💻 Programming Languages</h3>
+        <ul>
+            <li>C & C++ (Strong Foundation)</li>
+            <li>Python (Basic, Exploring Data Science & Automation)</li>
+            <li>Java (Basic, Object-Oriented Concepts)</li>
+        </ul>
+    
+        <h3>🌐 Web Development</h3>
+        <ul>
+            <li>HTML5 & CSS3 (Building Responsive Designs)</li>
+            <li>JavaScript (Learning DOM Manipulation & Events)</li>
+            <li>React.js (Upcoming - Learning Component-Based UI Development)</li>
+            <li>Responsive Web Design (CSS Flexbox, Grid)</li>
+        </ul>
+    
+        <h3>⚙️ Tools & Technologies</h3>
+        <ul>
+            <li>Git & GitHub (Version Control)</li>
+            <li>Visual Studio Code (Main Code Editor)</li>
+            <li>Chrome DevTools (Debugging & Performance Testing)</li>
+            <li>Postman (API Testing - Upcoming)</li>
+        </ul>
+    
+        <h3>🚀 Soft Skills</h3>
+        <ul>
+            <li>Problem-Solving & Logical Thinking</li>
+            <li>Teamwork & Collaboration</li>
+            <li>Time Management & Multitasking</li>
+        </ul>
+    
+        <p>I'm constantly learning and improving my skills. My current focus is on mastering frontend technologies and building real-world projects.</p>
+    </section>
+    
+
+    <section id="projects">
+        <h2>My Projects</h2>
+    
+        <div class="project">
+            <h3>🎨 Personal Portfolio Website</h3>
+            <p>A responsive portfolio website showcasing my skills, projects, and contact information.</p>
+            <a href="#" target="_blank">View Project</a>
+        </div>
+    
+        <div class="project">
+            <h3>🔎 Internship Finder with Job Alerts</h3>
+            <p>A Python-based web scraper that fetches internship listings from various platforms and sends alerts.</p>
+            <a href="#" target="_blank">View Project</a>
+        </div>
+    
+        <div class="project">
+            <h3>🤖 AI-Based Resume Evaluator</h3>
+            <p>A resume analysis tool that uses AI and NLP to provide feedback on resume strength and improvements.</p>
+            <a href="#" target="_blank">View Project</a>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out to me for collaborations, internships, or just to say hello! 😊</p>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="responseMessage"></p>
+        
+        <div class="contact-info">
+            <p>📍 Location: Shivpuri, Madhya Pradesh, India</p>
+            <p>📧 Email: 18adityamanu2006@gmail.com</p>
+            <p>📱 Phone: +91 9993449343</p>
+            <p>🔗 LinkedIn: <a href="https://linkedin.com/in/aditya-agrawal" target="_blank">linkedin.com/in/aditya-agrawal</a></p>
+            <p>🐱 GitHub: <a href="https://github.com/adityaagrawal" target="_blank">github.com/adityaagrawal</a></p>
+        </div>
+    </section>    
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", async function (event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+    
+            const responseMessage = document.getElementById("responseMessage");
+    
+            try {
+                const response = await fetch("http://localhost:3000/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, email, message })
+                });
+    
+                const data = await response.json();
+                responseMessage.innerText = data;
+                responseMessage.style.color = "green";
+            } catch (error) {
+                responseMessage.innerText = "Error sending message!";
+                responseMessage.style.color = "red";
+            }
+        });
+    </script>
+    
+</body>
+</html>

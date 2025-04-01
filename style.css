@@ -1,0 +1,196 @@
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: black;
+            padding-top: 60px; /* Adjust according to navbar height */
+        }
+        h1 {
+            color: #ffffff;
+        }
+        h2{
+            color:#ffffff
+        }
+        p {
+            color: #ffffff;
+        }
+        header {
+        background-color: #45a049;
+        color: white;
+        padding: 20px;
+        }
+
+        section {
+        margin: 20px;
+        padding: 20px;
+        background-color: rgba(68, 65, 65, 0.536);
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.867);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #f7f8f9;
+            color: #45a049(23, 117, 240);
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        nav {
+            position: fixed;  /* Keeps navbar fixed at the top */
+            top: 0;           /* Aligns navbar to the very top */
+            left: 0;
+            width: 100%;      /* Makes navbar stretch across the screen */        
+            background-color: #000000;
+            padding: 10px;
+            text-align: center;
+            z-index: 1000;    /* Keeps navbar above other content */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #45a049(202, 62, 62);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            color: #45a049;
+        }
+        .profile-pic {
+            display: block;
+            width: 400px; /* Adjust size */
+            height: auto;
+            border-radius: 0%; 
+            margin: 10px auto; /* Centers the image */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+        #skills h3 {
+            color: #45a049;
+            margin-top: 20px;
+        }
+
+        #skills ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #skills li {
+            background: #f4f4f4;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+
+        #projects {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        
+        .project {
+            background-color: #1e1e1e;
+            color: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+        }
+        
+        .project h3 {
+            color: #4CAF50;
+        }
+        
+        .project p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        .project a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        
+        .project a:hover {
+            background-color: #45a049;
+        }
+        
+        #contact {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #1e1e1e;
+            color: white;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        textarea {
+            height: 100px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .contact-info p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        
+        .contact-info a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
