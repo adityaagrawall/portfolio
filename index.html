@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark-mode.css">
 </head>
 <body>
+    <div id="particles-js"></div>
+
     <nav>
         <ul>
             <li><a href="#">Home</a></li> <!-- Added Home Button -->
@@ -17,10 +20,10 @@
         </ul>
     </nav>    
     <header>
-    <h1>Welcome to ADITYA's Portfolio</h1>
-    <p>Hi, I'm Aditya Agrawal! I'm a beginner web developer. A passionate web developer and tech enthusiast.</p>
+    <h1 id="Welcome to ADITYA's Portfolio"></h1>
+    <p>Hi, <span id="I'm Aditya Agrawal! I'm a beginner web developer. A passionate web developer and tech enthusiast."></span></p>
     </header>
-    <section id="about">
+    <section id="about" class="glass-card" class="scroll-animation" class="scroll-reveal">
         <h2>About Me</h2>
         <p>I am passionate about web development and currently learning HTML, CSS, and JavaScript.</p>
         <p>Hey there! I'm <strong>Aditya Agrawal</strong>, a passionate web developer and tech enthusiast on a mission to build impactful digital experiences. 
@@ -46,7 +49,7 @@
         
     </section>
 
-    <section id="skills">
+    <section id="skills" class="glass-card" class="scroll-animation" class="scroll-reveal">
         <h2>My Skills</h2>
         
         <h3>💻 Programming Languages</h3>
@@ -78,12 +81,30 @@
             <li>Teamwork & Collaboration</li>
             <li>Time Management & Multitasking</li>
         </ul>
+        <div class="skill">
+            <p>HTML</p>
+            <div class="skill-bar">
+                <div class="skill-fill html"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <p>CSS</p>
+            <div class="skill-bar">
+                <div class="skill-fill css"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <p>JavaScript</p>
+            <div class="skill-bar">
+                <div class="skill-fill js"></div>
+            </div>
+        </div>
     
         <p>I'm constantly learning and improving my skills. My current focus is on mastering frontend technologies and building real-world projects.</p>
     </section>
     
 
-    <section id="projects">
+    <section id="projects" class="glass-card" class="scroll-animation" class="scroll-reveal">
         <h2>My Projects</h2>
     
         <div class="project">
@@ -104,7 +125,7 @@
             <a href="#" target="_blank">View Project</a>
         </div>
     </section>
-    <section id="contact">
+    <section id="contact" class="glass-card" class="scroll-animation" class="scroll-reveal">
         <h2>Contact Me</h2>
         <p>Feel free to reach out to me for collaborations, internships, or just to say hello! 😊</p>
         <form id="contactForm">
@@ -123,6 +144,20 @@
             <p>🐱 GitHub: <a href="https://github.com/adityaagrawal" target="_blank">github.com/adityaagrawal</a></p>
         </div>
     </section>    
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div> <!-- Hamburger Icon -->
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="darkModeToggle">🌙</button>
+    </nav>
+    
+    
+    
     <script>
         document.getElementById("contactForm").addEventListener("submit", async function (event) {
             event.preventDefault(); // Prevent default form submission
@@ -149,6 +184,211 @@
             }
         });
     </script>
+    <script>
+        // Function to toggle the visibility of the navigation menu
+        function toggleMenu() {
+        const navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('active');
+        }
+    </script>
+    <video autoplay muted loop id="bg-video">
+        <source src="videos/bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal().reveal('section', {
+            delay: 300,        // Delay before animation starts (in ms)
+            distance: '50px',  // Distance the element moves during animation
+            origin: 'bottom',  // Direction from which the element appears
+            duration: 800,     // Animation duration (in ms)
+            easing: 'ease-in-out' // Smooth animation
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const text = "I'm Aditya Agrawal! I'm a beginner web developer. A passionate web developer and tech enthusiast.";  // Change this if needed
+            let index = 0;
+            const typingElement = document.getElementById("I'm Aditya Agrawal! I'm a beginner web developer. A passionate web developer and tech enthusiast.");
+
+            function typeEffect() {
+                if (index < text.length) {
+                    typingElement.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeEffect, 40); // Adjust speed here
+                }
+            }
+            typeEffect();
+        });
+    </script>
+    <script>
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.scroll-animation');
+            const windowHeight = window.innerHeight;
+
+            elements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('show');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Run once when page loads
+    </script>
     
+    <button id="backToTop" onclick="scrollToTop()">⬆</button>
+    
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+    
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        });
+    
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+    <script>
+        const nameText = "Welcome to ADITYA's Portfolio"; // Change this if needed
+        const typingElement = document.getElementById("Welcome to ADITYA's Portfolio");
+    
+        let index = 0;
+        function typeEffect() {
+            if (index < nameText.length) {
+                typingElement.innerHTML += nameText.charAt(index);
+                index++;
+                setTimeout(typeEffect, 150); // Adjust speed if needed
+            } else {
+                typingElement.classList.remove("border-right"); // Remove cursor effect
+            }
+        }
+    
+        window.onload = typeEffect;
+    </script>
+    
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+    </script>
+    <script>
+    function animateSkills() {
+        document.querySelector(".html").style.width = "90%";
+        document.querySelector(".css").style.width = "85%";
+        document.querySelector(".js").style.width = "75%";
+    }
+
+    // Run animation when the skills section is visible
+    document.addEventListener("scroll", function () {
+        let skillsSection = document.querySelector(".skill");
+        if (skillsSection.getBoundingClientRect().top < window.innerHeight) {
+            animateSkills();
+        }
+    });
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll(".scroll-reveal");
+
+            function revealOnScroll() {
+                elements.forEach((element) => {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.9) {
+                        element.classList.add("visible");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", revealOnScroll);
+            revealOnScroll(); // Initial check
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("Dark mode script is running!");  // Debugging message
+        
+            const darkModeToggle = document.getElementById("darkModeToggle");
+            const body = document.body;
+        
+            if (localStorage.getItem("dark-mode") === "enabled") {
+                body.classList.add("dark-mode");
+            }
+        
+            darkModeToggle.addEventListener("click", function() {
+                console.log("Dark mode button clicked!");  // Debugging message
+                body.classList.toggle("dark-mode");
+        
+                if (body.classList.contains("dark-mode")) {
+                    localStorage.setItem("dark-mode", "enabled");
+                } else {
+                    localStorage.setItem("dark-mode", "disabled");
+                }
+            });
+        });
+        </script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script>
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle"
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out"
+                    }
+                },
+                "interactivity": {
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        }
+                    }
+                }
+            });
+        </script>
+        
 </body>
 </html>
